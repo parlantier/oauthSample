@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.prototype.mapper.Test_boardMapper">
+
+	<insert id="insertTest_board">
+	insert into test_bard 
+	(bno, title, writer, content, regdate, file_url)
+	values
+	(
+	  bno_seq.nextval, #{title}, #{writer}, #{content}, #{regdate}, #{file_url}
+	)
+	
+	</insert>
+
+		
+
+
+
+
+</mapper>

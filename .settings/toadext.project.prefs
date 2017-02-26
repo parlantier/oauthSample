@@ -1,0 +1,7 @@
+//src/main/javaSQL_DETECTION=ON
+//src/main/resourcesSQL_DETECTION=ON
+//src/test/javaSQL_DETECTION=ON
+//src/test/resourcesSQL_DETECTION=ON
+DATABASE_LANGUAGE=ORACLE
+SQL_SOURCE_PATHS=src/main/javaSQL_SOURCE_PATH_DELIMITERsrc/test/resourcesSQL_SOURCE_PATH_DELIMITERsrc/main/resourcesSQL_SOURCE_PATH_DELIMITERsrc/test/java
+eclipse.preferences.version=1
