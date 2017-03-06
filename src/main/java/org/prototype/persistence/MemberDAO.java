@@ -13,5 +13,6 @@ public interface MemberDAO {
 	
 	public MemberVO getNickName(String nickname)throws Exception;
 	
+	public void updatePassword(MemberVO vo)throws Exception;
 	
 }

@@ -1,12 +1,9 @@
 package org.prototype.interceptor;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.prototype.domain.MemberVO;
-import org.prototype.persistence.MemberDAO;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 

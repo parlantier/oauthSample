@@ -18,6 +18,9 @@
 	<h1>하이</h1>
 	<button id="googleBtn">구글로그인</button>
 	<button id="facebookBtn">facebook로그인</button>
+	<button id="sendEmail">이메일보내기</button>
+	<button id="snsBtn">SNS버튼</button>
+
 
 	<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
 	<script>
@@ -32,6 +35,10 @@
 		};
 		firebase.initializeApp(config);
 		auth = firebase.auth();
+		// 여러 인증업체 연결
+		var provider = new firebase.auth.GoogleAuthProvider();
+		var provider = new firebase.auth.FacebookAuthProvider();
+		
 		var googleProvider = new firebase.auth.GoogleAuthProvider();
 		var facebookProvider = new firebase.auth.FacebookAuthProvider();
 		googleProvider.addScope('profile');
@@ -71,7 +78,7 @@
 				}
 
 			});
-		});
+		});	
 
 		$("#facebookBtn")
 				.on(
@@ -130,13 +137,63 @@
 			});
 
 		}
+
+		// 이메일 보내기 버튼 핸들러
+		$("#sendEmail").on("click", function() {
+
+			firebase.auth().onAuthStateChanged(function(user) {
+				if (user) {
+					// User is signed in.
+					console.log("이메일 체크: ");
+					console.log(user);
+					user.sendEmailVerification().then(function() {
+						// Email sent.
+						console.log("이메일 전송완료");
+					}, function(error) {
+						// An error happened.
+						console.log("이메일 전송 실패");
+					});
+
+				} else {
+					// No user is signed in.
+					console.log("로그인상태아님");
+					firebase.auth().signInWithPopup(googleProvider).then(
+						function(result){		
+							var user = firebase.auth().currentUser;
+							console.log("이메일:");
+							console.log(result);
+							console.log(user);
+							
+						});
+				}
+			});
+
+		});
+		
+		// 비밀번호 찾기 버튼
+		// 이메일을 입력받아 메일보내기
+		$("#snsBtn").on("click", function(){
+			
+			var auth = firebase.auth();
+			var emailAddress = prompt("이메일 주소를 입력하세요");
+
+			auth.sendPasswordResetEmail(emailAddress).then(function() {
+			  // Email sent.
+				console.log("이메일 보내기 성공");
+			}, function(error) {
+			  // An error happened.
+				console.log("이메일 보내기 실패")
+				
+			});
+		
+			
+		});
+		
+		
 	</script>
 
 	 
-	<script async defer src="https://apis.google.com/js/api.js"
-		onload="this.onload=function(){};handleClientLoad()"
-	onreadystatechange="if (this.readyState === 'complete') this.onload()">
-	</script>
+	
 
 
 

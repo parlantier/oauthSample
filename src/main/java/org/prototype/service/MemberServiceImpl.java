@@ -40,4 +40,13 @@ public class MemberServiceImpl implements MemberService {
 		return false;
 	}
 
+	@Override
+	public void modifyPassword(MemberVO vo) throws Exception {
+		// TODO Auto-generated method stub
+		
+		memberDAO.updatePassword(vo);
+	}
+
+	
+	
 }

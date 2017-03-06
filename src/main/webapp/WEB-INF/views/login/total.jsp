@@ -9,6 +9,14 @@
 <script src="/resources/js/facebook.js"></script>
 <script src="/resources/js/google.js"></script>
 <script src="/resources/js/snsBtn.js"></script>
+<script>
+	$(function() {
+		$("#dangerBtn").on("click", function() {
+			console.log($("#danger"));
+			$("#danger").text("하이");
+		});
+	})
+</script>
 <title>통합 로그인</title>
 <meta charset="UTF-8">
 </head>
@@ -21,25 +29,29 @@
 
 	<h3>사용자 정보입력</h3>
 	<form action="/member/join" method="post">
-		<div>닉네임:&nbsp;<input type="text" id="nickname" name="nickname" value="">
-		<input type="button" id="nickBtn" value="중복확인">
+		<div>
+			닉네임:&nbsp;<input type="text" id="nickname" name="nickname" value="">
+			<input type="button" id="nickBtn" value="중복확인">
 		</div>
-		<div>비번:&nbsp;<input type="text" id="password" name="password">
-		</div>		
-		
-		<input type="text" id="sex" name="sex" value="">
-		<input type="text" id="age" name="age" value="">
-		<input type="text" id="email" name="email" value="">
-		<input type="button" id="emailBtn" value="이메일 중복확인">
-		<input type="submit" value="가입하기">
+		<div>
+			비번:&nbsp;<input type="text" id="password" name="password">
+		</div>
+
+		<input type="text" id="sex" name="sex" value=""> <input
+			type="text" id="age" name="age" value=""> <input type="text"
+			id="email" name="email" value=""> <input type="button"
+			id="emailBtn" value="이메일 중복확인"> <input type="submit"
+			value="가입하기"> <div id="danger">sdfdsdf</div> <input type="button"
+			id="dangerBtn" value="위험">
 	</form>
-<script async defer src="https://apis.google.com/js/api.js" 
 
-      onload="this.onload=function(){};handleClientLoad()" 
-
-      onreadystatechange="if (this.readyState === 'complete') this.onload()">
-
-</script>
+	<script>
+		
+	</script>
+	<script async defer src="https://apis.google.com/js/api.js"
+		onload="this.onload=function(){};handleClientLoad()"
+		onreadystatechange="if (this.readyState === 'complete') this.onload()">
+	</script>
 
 </body>
 </html>

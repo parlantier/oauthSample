@@ -22,7 +22,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 		// 패스워드가 유효한지 검사한다
 		HttpSession session = request.getSession();
 		MemberVO userVO = new MemberVO();
-		String password = request.getParameter("email");
+		String password = request.getParameter("password");
 		userVO.setEmail(request.getParameter("email"));
 		
 		MemberVO memberVO = memberDAO.getMember(userVO);

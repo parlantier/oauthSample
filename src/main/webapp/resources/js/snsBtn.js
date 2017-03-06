@@ -18,6 +18,9 @@ $(function(){
 			success : function(result){
 				
 				console.log(result);
+				if(result.indexOf("0") != -1){
+					$("#danger").text("유효한 이메일이 아닙니다");
+				}
 			}			
 		});
 		
@@ -41,10 +44,14 @@ $(function(){
 			success : function(result){
 				
 				console.log(result);
+				if(result.indexOf("0") != -1){
+					$("#danger").text("유효한 닉네임이 아닙니다");
+				}
 			}			
 		});
 		
 	});
+	
 	
 	
 });

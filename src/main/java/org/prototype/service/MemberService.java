@@ -10,4 +10,6 @@ public interface MemberService {
 	
 	public boolean checkNickName(String nickname)throws Exception;
 	
+	public void modifyPassword(MemberVO vo)throws Exception;
+	
 }

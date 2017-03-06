@@ -38,6 +38,12 @@ public class MemberDAOImpl implements MemberDAO{
 		return sqlSession.selectOne(namespace+".getNickName", nickname);
 	}
 
+	@Override
+	public void updatePassword(MemberVO vo) throws Exception {
+		// TODO Auto-generated method stub
+		sqlSession.update(namespace+".updatePassword", vo);
+	}
+
 	
 	
 	

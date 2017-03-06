@@ -50,6 +50,6 @@
 	<mvc:view-controller path="/manager/main" view-name="managerMain" />
 	<mvc:view-controller path="/admin/main" view-name="adminMain" />
 	<mvc:view-controller path="/member/main" view-name="memberMain" />
-	
+	<mvc:view-controller path="/login/facebook3" view-name="/login/facebook3"/>
 	
 </beans:beans>
