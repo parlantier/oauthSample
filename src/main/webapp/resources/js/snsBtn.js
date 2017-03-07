@@ -20,6 +20,7 @@ $(function(){
 				console.log(result);
 				if(result.indexOf("0") != -1){
 					$("#danger").text("유효한 이메일이 아닙니다");
+					$("#danger").css("color", "red");
 				}
 			}			
 		});
@@ -46,12 +47,29 @@ $(function(){
 				console.log(result);
 				if(result.indexOf("0") != -1){
 					$("#danger").text("유효한 닉네임이 아닙니다");
+					$("#danger").css("color", "red");
 				}
 			}			
 		});
 		
 	});
 	
+	$("#sendEmail").on("click", function(){
+		
+		var auth = firebase.auth();
+		var emailAddress = prompt("이메일 주소를 입력하세요");
+
+		auth.sendPasswordResetEmail(emailAddress).then(function() {
+		  // Email sent.
+			console.log("이메일 보내기 성공");
+		}, function(error) {
+		  // An error happened.
+			console.log("이메일 보내기 실패")
+			
+		});
+	
+		
+	});
 	
 	
 });

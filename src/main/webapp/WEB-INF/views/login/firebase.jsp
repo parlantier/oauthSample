@@ -19,7 +19,7 @@
 	<button id="googleBtn">구글로그인</button>
 	<button id="facebookBtn">facebook로그인</button>
 	<button id="sendEmail">이메일보내기</button>
-	<button id="snsBtn">SNS버튼</button>
+	<button id="snsBtn">비밀번호찾기</button>
 
 
 	<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>

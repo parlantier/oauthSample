@@ -15,6 +15,8 @@ window.fbAsyncInit = function() {
 	    
 	    if (response.status === 'connected') {
 	        console.log('Logged in.');
+	        var accessToken = response.authResponse.accessToken; 
+	        getProFile(accessToken);
 	      }
 	      else {
 	        FB.login();

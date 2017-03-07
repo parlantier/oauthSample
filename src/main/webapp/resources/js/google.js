@@ -141,6 +141,10 @@
     		var sex = result.genders[0].value;
     		var email = result.emailAddresses[0].value;
     		var age = result.ageRange;
+    		switch(age){
+    			case 'TWENTY_ONE_OR_OLDER' : age = 21; break;
+    		}
+    		
     		console.log(sex);
     		console.log(email);
     		console.log(age);
